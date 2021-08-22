@@ -1,6 +1,3 @@
-// const readlineSync = require('readline-sync'),
-// userInput = readlineSync.question("Pleas enter your name ")
-// console.log("Welcome"+" "+ userInput + " "+ "Lets Play the Quiz")
 const chalk =require('chalk')
 const readlineSync = require('readline-sync')
 
