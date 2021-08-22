@@ -35,30 +35,44 @@ function play(quizQuestion,quizAnswer){
        scoreCard= scoreCard-1
     }
     console.log(chalk.yellow("your score is")+":"+chalk.white(scoreCard))
+    if (scoreCard == 10 ){
+  console.log(" and you know me very well")
+}
+else if (scoreCard < 0){
+console.log("you have scored"+" "+ chalk.red("zero") +" because your score is in negative values")
+console.log("but we could be friends.")
+}
+else if (scoreCard <10)
+{
+  console.log(" and you know me ")
+}
+else {
+  console.log("Invalid ")
+}
 }
 
 let questionOne = {
-      question:"(1) What is Git? \na.A programming Language \nb.Version Control System \nc.Nickname of github",
-      answer:"b"
+      question:"(1)  What is my nickname? \na.Samved \nb.Raju \nc.Prankur",
+      answer:"c"
 };
 
 let questionTwo = {
-    question:"(2) What is the command to get the installed version of git?\na.git --version \nb.git-v \nc.gitVersion",
+    question:"(2) Where do I live?\na.Satna \nb.Pune \nc.Banglore",
     answer:"a"
 }
 
 let questionThree = {
-    question:"(3) What is the command to set the user email for the current repository? \na.git email \nb.git user-email \nc.git config --global user.email",
-    answer: "c"
+    question:"(3) What do I like most? \na.Pasta \nb.Pizza  \nc.Samosa",
+    answer: "b"
 }
 
 let questionFour = {
-    question:"(4) What is the command to set the user name for the current repository? \na.git username \nb.git config --global user.name \nc.git user-email",
+    question:"(4) Who is my best friend? \na.Vipin \nb.Anurag \nc.Sandeep",
     answer: "b"
 }
 
 let questionFive = {
-    question:"(5) What is the command to get  the user name and email for the current repository? \na.git config --list  \nb.git user-list \nc.git list",
+    question:"(5) What language I can speak apart from Hindi? \na.English \nb.Spanish \nc.Russian",
     answer: "a"
 }
 let questionBank = [questionOne,questionTwo,questionThree,questionFour,questionFive]
@@ -66,18 +80,6 @@ for(i=0;i<questionBank.length;i++){
     play(questionBank[i].question,questionBank[i].answer)
 }
 
-if (scoreCard == 10 ){
-  console.log("you know Git very well")
-}
-else if (scoreCard < 0){
-console.log("you have scored"+""+ chalk.red("zero") +" because your socre is in negative values")
-}
-else if (scoreCard <10)
-{
-  console.log("you know  git ")
-}
-else {
-  console.log("invalid")
-}
+
 console.log("\t")
 console.log(chalk.green("thanks for taking the quiz ,your final score is : ") + chalk.yellow(scoreCard))
