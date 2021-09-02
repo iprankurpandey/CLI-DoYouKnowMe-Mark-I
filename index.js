@@ -2,7 +2,7 @@
 const chalk =require('chalk')
 //readlinesync to take user input on CLI
 const readlineSync = require('readline-sync')
-console.log(chalk.green.bgBlue.bold("Lets find out how well do you know me!!! 🙈")) //welcomeing the user 
+console.log(chalk.green.bgBlue.bold("Lets find out how well do you know me!!! 🙈 \n")) //welcoming the user 
 
 const inputName = readlineSync.question(chalk.cyanBright("❤ Please enter your name❤" +" :"))//taking player name as input
 console.log("Hi"+" " + chalk.yellowBright(inputName) + " ,"+ "How well do you know Me? Lets get it.") //declaring quiz goal
@@ -17,7 +17,7 @@ console.log(chalk.magentaBright("Game Rules"))//game rules
   console.log("(b) for every wrong answer you will get "+ (chalk.red("1 Mark."))) 
   console.log(chalk.yellow("(c) this is just a game, I dont get offended you don't know me, cheers❤ !!"))
   console.log("(d)Enter a/ b/ c for each question to answer")
-  console.log("\t")
+
 }
 //leaderboard score 
 let highScores = [
@@ -40,7 +40,7 @@ let scoreCard = 0 //scoreCard variable
 
 //function to play quiz
 function play(quizQuestion,quizAnswer){
-    console.log("\n")
+    
     let userAnswer = readlineSync.question(quizQuestion)//taking the user input 
     console.log(chalk.cyan("you have selected :")+ userAnswer)//displayig the user input what is selected 
     if (userAnswer===quizAnswer) //condition to check the answers and update the score 
