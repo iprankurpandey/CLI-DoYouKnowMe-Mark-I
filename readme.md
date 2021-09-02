@@ -1,13 +1,13 @@
-# Welcome to Do you know Me Quiz!
+# Welcome to Do you know Git Quiz!
 
-This Quiz is a part of neogcamp Mark2 project where I have to make a CLI Quiz app using NodeJs and some other special npm packages such as readlineSync and Chalk.
+This Quiz game is an assesment of NeogCamp Mark-II qualifier.
 
-**I have used the array of objects ,condition,opertators and loops to buit this project ,to beautify the project  used the chalk npm library.**
+This is a CLI app and it is created using Javascript and hosted on repl.it . 
 
-# Files
+You can always use this game to test your friends how well they know you.
 
-All the files related to the proejct are stored in Github where index.js file has all the logic related to the project and package.json file has packages.
+Please enjoy the game by hitting below url: 
 
 ## URL 
 
-[The project URL can be found at here :](https://replit.com/@iprankurpandey/CLI-DoYouKnowMe-Mark-I-NeoGCamp-lvl0)
+The project URL can be found at here :)(https://replit.com/@iprankurpandey/CLI-DoYouKnowMe-Mark-I-NeoGCamp-lvl0)
