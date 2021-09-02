@@ -6,8 +6,8 @@ console.log(chalk.green.bgBlue.bold("Lets find out how well do you know me!!! �
 
 const inputName = readlineSync.question(chalk.cyanBright("❤ Please enter your name❤" +" :"))//taking player name as input
 console.log("Hi"+" " + chalk.yellowBright(inputName) + " ,"+ "How well do you know Me? Lets get it.") //declaring quiz goal
- 
-const gameRules = readlineSync.question(chalk.magentaBright("Would you like to read the Game rules,Press 1 to read it OR press ENTER to directly play the game.")) //select game rules whether to read it or ignore it
+ //select game rules whether to read it or ignore it
+const gameRules = readlineSync.question(chalk.magentaBright("Would you like to read the Game rules,Press 1 to read it OR press ENTER to directly play the game.")) 
 let userInput = gameRules
 if (userInput == 1){
 
@@ -43,16 +43,16 @@ function play(quizQuestion,quizAnswer){
     console.log("\n")
     let userAnswer = readlineSync.question(quizQuestion)//taking the user input 
     console.log(chalk.cyan("you have selected :")+ userAnswer)//displayig the user input what is selected 
-    if (userAnswer===quizAnswer) //condition check the andswers and update the score 
+    if (userAnswer===quizAnswer) //condition to check the answers and update the score 
     {
       console.log(chalk.green("you are right"))
-       scoreCard= scoreCard+2 //socre updtation
+       scoreCard= scoreCard+2 //socre updatation
     } else{
      
       console.log(chalk.red("you are wrong"))
        scoreCard= scoreCard-1
     }
-    console.log(chalk.yellow("your score is")+":"+chalk.white(scoreCard)) //final score display
+    console.log(chalk.yellow("your score is")+":"+chalk.white(scoreCard)) //final score to be displayed
 }
 
 //questions and answers in an array of objects
@@ -111,7 +111,7 @@ else {
 console.log("\t")
 console.log("--------\nCheck out the top scores and send me a screenshot if you've beaten them!\n")
 
-//displayinh leaderboard leaders
+//displaying leaderboard leaders
 console.log("Name\t\tScore")
 for(var i = 0; i < highScores.length; i++) {
   console.log(highScores[i].name + "\t\t" + highScores[i].score);
