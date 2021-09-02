@@ -17,7 +17,22 @@ console.log(chalk.magentaBright("Game Rules"))
   console.log("(d)Enter a/ b/ c for each question to answer")
   console.log("\t")
 }
+let highScores = [
+  {
+    name: "Prankur",
+    score: 10,
+  },
 
+  {
+    name: "Anurag",
+    score: 9,
+  },
+
+  {
+    name: "Ankit",
+    score: 8,
+  },
+]
 let scoreCard = 0
 function play(quizQuestion,quizAnswer){
     console.log("\n")
@@ -60,7 +75,7 @@ let questionFive = {
     answer: "a"
 }
 let questionSix = {
-    question:"(6)What do I prefer msost ? \na.City \nb.Village \nc.Metro",
+    question:"(6)What do I prefer most ? \na.City \nb.Village \nc.Metro",
     answer: "b"
 }
 
@@ -75,14 +90,21 @@ if (scoreCard == 10 ){
 }
 else if (scoreCard < 0){
 console.log("you have scored"+" "+ chalk.red("zero") +" because your score is in negative values")
-console.log("but we could be friends.")
+console.log("but we could be friends.\t")
 }
 else if (scoreCard <10)
 {
-  console.log(" and you know me ")
+  console.log("and you know me \t")
 }
 else {
-  console.log("Invalid ")
+  console.log("Invalid \t ")
 }
+
 console.log("\t")
+console.log("--------\nCheck out the top scores and send me a screenshot if you've beaten them!\n")
+
+console.log("Name\t\tScore")
+for(var i = 0; i < highScores.length; i++) {
+  console.log(highScores[i].name + "\t\t" + highScores[i].score);
+}
 console.log(chalk.green("thanks for taking the quiz ,your final score is : ") + chalk.yellow(scoreCard))
