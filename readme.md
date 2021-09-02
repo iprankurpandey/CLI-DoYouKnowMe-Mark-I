@@ -1,6 +1,6 @@
 # Welcome to Do you know Me Quiz!
 
-This Quiz game is an assesment of NeogCamp Mark-II qualifier.
+This Quiz game is an assesment of NeogCamp Mark-I qualifier.
 This is a CLI app and it is created using Javascript and hosted on repl.it . 
 You can always use this game to test your friends how well they know you.
 
