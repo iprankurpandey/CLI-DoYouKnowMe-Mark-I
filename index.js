@@ -1,15 +1,17 @@
+//chalk to beutify the font color on CLI
 const chalk =require('chalk')
+//readlinesync to take user input on CLI
 const readlineSync = require('readline-sync')
-console.log(chalk.green.bgBlue.bold("Lets find out how well do you know me!!! 🙈"))
+console.log(chalk.green.bgBlue.bold("Lets find out how well do you know me!!! 🙈")) //welcomeing the user 
 
-const inputName = readlineSync.question(chalk.cyanBright("❤ Please enter your name❤" +" :"))
-console.log("Hi"+" " + chalk.yellowBright(inputName) + " ,"+ "How well do you know Me? Lets get it.")
-
-const gameRules = readlineSync.question(chalk.magentaBright("Would you like to read the Game rules,Press 1 to read it OR press ENTER to directly play the game."))
+const inputName = readlineSync.question(chalk.cyanBright("❤ Please enter your name❤" +" :"))//taking player name as input
+console.log("Hi"+" " + chalk.yellowBright(inputName) + " ,"+ "How well do you know Me? Lets get it.") //declaring quiz goal
+ 
+const gameRules = readlineSync.question(chalk.magentaBright("Would you like to read the Game rules,Press 1 to read it OR press ENTER to directly play the game.")) //select game rules whether to read it or ignore it
 let userInput = gameRules
 if (userInput == 1){
 
-console.log(chalk.magentaBright("Game Rules"))
+console.log(chalk.magentaBright("Game Rules"))//game rules
 
   console.log("(a) for every right answer you will get "+ (chalk.green("2 Marks."))) 
   console.log("(b) for every wrong answer you will get "+ (chalk.red("1 Mark."))) 
@@ -17,6 +19,7 @@ console.log(chalk.magentaBright("Game Rules"))
   console.log("(d)Enter a/ b/ c for each question to answer")
   console.log("\t")
 }
+//leaderboard score 
 let highScores = [
   {
     name: "Prankur",
@@ -33,23 +36,26 @@ let highScores = [
     score: 8,
   },
 ]
-let scoreCard = 0
+let scoreCard = 0 //scoreCard variable 
+
+//function to play quiz
 function play(quizQuestion,quizAnswer){
     console.log("\n")
-    let userAnswer = readlineSync.question(quizQuestion)
-    console.log(chalk.cyan("you have selected :")+ userAnswer)
-    if (userAnswer===quizAnswer)
+    let userAnswer = readlineSync.question(quizQuestion)//taking the user input 
+    console.log(chalk.cyan("you have selected :")+ userAnswer)//displayig the user input what is selected 
+    if (userAnswer===quizAnswer) //condition check the andswers and update the score 
     {
       console.log(chalk.green("you are right"))
-       scoreCard= scoreCard+2
+       scoreCard= scoreCard+2 //socre updtation
     } else{
      
       console.log(chalk.red("you are wrong"))
        scoreCard= scoreCard-1
     }
-    console.log(chalk.yellow("your score is")+":"+chalk.white(scoreCard))
+    console.log(chalk.yellow("your score is")+":"+chalk.white(scoreCard)) //final score display
 }
 
+//questions and answers in an array of objects
 let questionOne = {
       question:"(1)What is my nickname? \na.Samved \nb.Raju \nc.Prankur",
       answer:"c"
@@ -78,13 +84,15 @@ let questionSix = {
     question:"(6)What do I prefer most ? \na.City \nb.Village \nc.Metro",
     answer: "b"
 }
-
+//array of questions
 let questionBank = [questionOne,questionTwo,questionThree,questionFour,questionFive,questionSix]
 console.log('\n')
+//accesing the array elements
 for(i=0;i<questionBank.length;i++){
+  //fetching the questions and answers through loop and putting those in play function
     play(questionBank[i].question,questionBank[i].answer)
 }
-
+//score card to evaluate how well someone know me
 if (scoreCard == 10 ){
   console.log("and you know me very well")
 }
@@ -103,6 +111,7 @@ else {
 console.log("\t")
 console.log("--------\nCheck out the top scores and send me a screenshot if you've beaten them!\n")
 
+//displayinh leaderboard leaders
 console.log("Name\t\tScore")
 for(var i = 0; i < highScores.length; i++) {
   console.log(highScores[i].name + "\t\t" + highScores[i].score);
