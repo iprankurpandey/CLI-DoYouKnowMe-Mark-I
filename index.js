@@ -15,15 +15,14 @@ console.log(chalk.magentaBright("Game Rules"))//game rules
 
   console.log("(a) for every right answer you will get "+ (chalk.green("2 Marks."))) 
   console.log("(b) for every wrong answer you will get "+ (chalk.red("1 Mark."))) 
-  console.log(chalk.yellow("(c) this is just a game, I dont get offended you don't know me, cheers❤ !!"))
-  console.log("(d)Enter a/ b/ c for each question to answer")
+  console.log("(c)Enter a/ b/ c for each question to answer")
 
 }
 //leaderboard score 
 let highScores = [
   {
     name: "Prankur",
-    score: 10,
+    score: 12,
   },
 
   {
@@ -40,8 +39,10 @@ let scoreCard = 0 //scoreCard variable
 
 //function to play quiz
 function play(quizQuestion,quizAnswer){
-    
-    let userAnswer = readlineSync.question(quizQuestion)//taking the user input 
+    console.log('\t')
+    let userAnswer = readlineSync.question(quizQuestion)
+  
+    //taking the user input 
     console.log(chalk.cyan("you have selected :")+ userAnswer)//displayig the user input what is selected 
     if (userAnswer===quizAnswer) //condition to check the answers and update the score 
     {
@@ -49,7 +50,7 @@ function play(quizQuestion,quizAnswer){
        scoreCard= scoreCard+2 //socre updatation
     } else{
      
-      console.log(chalk.red("you are wrong"))
+      console.log(chalk.red("you have selected incorrect option"))
        scoreCard= scoreCard-1
     }
     console.log(chalk.yellow("your score is")+":"+chalk.white(scoreCard)) //final score to be displayed
@@ -93,7 +94,7 @@ for(i=0;i<questionBank.length;i++){
     play(questionBank[i].question,questionBank[i].answer)
 }
 //score card to evaluate how well someone know me
-if (scoreCard == 10 ){
+if (scoreCard == 12 ){
   console.log("and you know me very well")
 }
 else if (scoreCard < 0){
